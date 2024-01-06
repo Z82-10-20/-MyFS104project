@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include("dashboard-navbar.ejs") %>
+    <div class="container mt-5 mb-5">
+        <h1>Edit Your Profile</h1>
+        <% if (message) { %>
+            <div class="alert alert-info"><%= message %></div>
+        <% } %>
+
+        <form method="POST" action="/settings">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" value="<%= user.name %>">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>">
+            </div>
+             <div class="form-group">
+        <label for="currentPassword">Current Password:</label>
+        <input type="password" class="form-control" id="currentPassword" name="currentPassword" required>
+    </div>
+
+            <div class="form-group">
+                <label for="password">New Password:</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+            </div>
+            
+  <div class="d-flex align-items-center">
+    <div class="btn-group">
+        <button type="submit" class="btn btn-primary rounded">Save Changes</button>
+        <a href="/dashboard" class="btn btn-secondary mx-2 rounded">Back to Dashboard</a>
+    </div>
+</div>
+
+        </form>
+
+       
+    </div>
+<!-- <footer class="footer-class mt-5">
+    <div class="mt-5">
+        <%- include("footer.ejs") %>
+    </div>
+</footer> -->
+    <!-- Add Bootstrap JS and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include your CSS and JavaScript libraries here -->
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/dashprofile.css">
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Include the dashboard-specific navbar -->
+    <%- include("dashboard-navbar.ejs") %>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Profile: <%= user.name %></h1>
+
+        <!-- User Information -->
+        <div class="row">
+            <div class="col-md-4">
+                <% if (user.profilePicture && user.profilePicture.fileId) { %>
+                    <img src="/profilePicture/<%= user.profilePicture.fileId %>" alt="Profile Picture" id="profilePicture" class="img-fluid rounded-circle">
+                <% } else { %>
+                    <!-- Display a placeholder or default image if profilePicture is not available -->
+                    <img src="https://dummyimage.com/150x150/dee2e6/6c757d.jpg" alt="Default Profile Picture" id="profilePicture" class="img-fluid rounded-circle">
+                <% } %>
+            </div>
+
+            <div class="col-md-8">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Name:</strong> <%= user.name %>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Email:</strong> <%= user.email %>
+                    </li>
+                    <!-- Add more user details as needed -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Edit Picture Button -->
+        <form action="/upload" method="POST" id="profilePictureForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="newProfilePicture">Upload New Picture</label>
+                <input type="file" class="form-control-file" id="newProfilePicture" name="newProfilePicture" accept="image/*">
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+
+        <!-- Purchase History -->
+        <div class="mt-3">
+            <h2>Purchase History</h2>
+            <!-- Add your code to display purchase history here -->
+        </div>
+    </div>
+
+    <!-- Include your footer or other content as needed -->
+    <footer class="footer-class mt-5">
+        <%- include("footer.ejs") %>
+    </footer>
+
+    <!-- Bootstrap JavaScript and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.querySelector('#newProfilePicture').addEventListener('change', function (e) {
+            var fileName = document.getElementById("newProfilePicture").files[0].name;
+            var nextSibling = e.target.nextElementSibling;
+            nextSibling.innerText = fileName;
+
+            // Get the <img> element by its id
+            var profilePicture = document.getElementById('profilePicture');
+
+            // Create a URL for the newly uploaded image
+            var imageURL = URL.createObjectURL(e.target.files[0]);
+
+            // Set the src attribute of the <img> element to the new image URL
+            profilePicture.src = imageURL;
+        });
+    </script>
+</body>
+</html>

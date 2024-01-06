@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Include your CSS and JavaScript libraries here -->
+    <!-- Bootstrap CSS and JavaScript -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Include the dashboard-specific navbar -->
+    <%- include("dashboard-navbar.ejs") %>
+
+    <div class="container mt-5">
+        <h1>Welcome, <%= user.name %>! <span id="greeting"></span></h1>
+
+        <!-- Static Carousel component -->
+        <div id="dashboardCarousel" class="carousel slide">
+            <!-- Numeric page indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#dashboardCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#dashboardCarousel" data-slide-to="1"></li>
+                 <li data-target="#dashboardCarousel" data-slide-to="2"></li>
+            </ol>
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="content-container">
+                        <%- include("dashmidsection.ejs") %>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="content-container">
+                        <%- include("dashmidsection2.ejs") %>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="content-container">
+                        <%- include("dashmidsection3.ejs") %>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="carousel-control-prev" href="#dashboardCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#dashboardCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Include your footer or other content as needed -->
+    
+<footer class="footer-class mb-5">
+   <%- include("footer.ejs") %>
+</footer>
+
+
+<script>
+    // Function to increase quantity
+    function increaseQuantity(button) {
+        const quantityElement = button.parentElement.querySelector('.quantity');
+        const currentQuantity = parseInt(quantityElement.textContent);
+        const newQuantity = currentQuantity + 1;
+        quantityElement.textContent = newQuantity;
+        updateCartCount(newQuantity); // Update cart count
+    }
+
+    // Function to decrease quantity
+    function decreaseQuantity(button) {
+        const quantityElement = button.parentElement.querySelector('.quantity');
+        const currentQuantity = parseInt(quantityElement.textContent);
+        if (currentQuantity > 0) {
+            const newQuantity = currentQuantity - 1;
+            quantityElement.textContent = newQuantity;
+            updateCartCount(newQuantity); // Update cart count
+        }
+    }
+
+    // Function to update cart count in navbar
+    function updateCartCount(quantity) {
+        const cartCountElement = document.querySelector('.cart-count');
+        cartCountElement.textContent = quantity;
+    }
+</script>
+
+
+<script>
+
+// Attach event listeners to all "Add to Cart" buttons
+document.querySelectorAll('[data-product-id]').forEach(button => {
+    button.addEventListener('click', function() {
+        addToCart(this.getAttribute('data-product-id'));
+    });
+
+});
+
+function addToCart(productId) {
+    // ... existing logic ...
+    const cartCountElement = document.querySelector('.badge.rounded-pill');
+    let currentCount = parseInt(cartCountElement.textContent) || 0;
+    cartCountElement.textContent = currentCount + 1;
+}
+
+</script>
+
+
+
+     <script>
+        // Function to get the current time and update the greeting
+        function updateGreeting() {
+            const now = new Date();
+            const hour = now.getHours();
+
+            let greeting = "";
+            if (hour < 12) {
+                greeting = "Good morning";
+            } else if (hour < 18) {
+                greeting = "Good afternoon";
+            } else {
+                greeting = "Good evening";
+            }
+
+            // Update the greeting in the HTML
+            document.getElementById("greeting").textContent = greeting;
+        }
+
+        // Call the updateGreeting function initially
+        updateGreeting();
+
+        // Update the greeting every minute (you can adjust the timing as needed)
+        setInterval(updateGreeting, 60000); // Update every minute
+    </script>
+</body>
+</html>

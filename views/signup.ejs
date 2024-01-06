@@ -12,7 +12,8 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header"><i class="fas fa-baby animated bounce"></i> Babyshark
+</a>
                         <h2 class="text-center">SignUp</h2>
                     </div>
                     <div class="card-body">
@@ -22,16 +23,23 @@
                                 <input type="text" class="form-control" id="name" name="username" placeholder="Enter your name" required autocomplete="off">
                             </div>
                             <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required autocomplete="off">
+                            </div>
+                            <div class="form-group">
                                 <label for="password">Password:</label>
                                 <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block mt-3">SignUp</button>
+
+                            <div class="text-center"><button type="submit" class="btn btn-primary btn-block mt-3">SignUp</button></div>
+                            
                         </form>
                         
                         <!-- "Back to Login" link -->
-                        <div class="text-center mt-3">
-                            <p>Already have an account? <a href="/">Back to Login</a></p>
-                        </div>
+                       <div class="card-footer text-center mt-4">
+    <p>Already have an account? <a href="/login">Back to Login</a></p>
+    <p>Return to <a href="/">Homepage</a></p> <!-- Add this line -->
+</div>
                     </div>
                 </div>
             </div>
