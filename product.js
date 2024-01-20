@@ -1,17 +1,26 @@
-// product.js
+import mongoose from "mongoose";
+const connect = mongoose.connect("mongodb://127.0.0.1:27017/signupDB");
 
-import mongoose from 'mongoose';
-
-const { Schema, model } = mongoose;
-
-const productSchema = new Schema({
-    name: { type: String, required: true },
-    description: { type: String, required: true },
-    price: { type: Number, required: true },
-    imageUrl: { type: String, required: true },
-    // Add more fields as needed for your product data
+connect.then(() => {
+    console.log("Database connected successfully");
+}).catch(() => {
+    console.log("Database cannot be connected");
+});
+const productSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    // Other product-related fields
 });
 
-const Product = model('Product', productSchema);
+const Product = mongoose.model("Product", productSchema);
 
 export default Product;
+
+
+

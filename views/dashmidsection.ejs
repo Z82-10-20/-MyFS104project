@@ -1,38 +1,41 @@
-      <!-- Section-->
+        <!-- Section-->
       <section class="py-5">
           <div class="container px-4 px-lg-5 mt-5">
               <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                   <div class="col mb-5">
                       <div class="card h-100">
-
                           <!-- Product image-->
-                          <img class="card-img-top" src="/images/dashmidsection/mario dress.png" alt="..." />
-                          <!-- Product details-->
+                          <img class="card-img-top" src="/images/dashmidsection/mario dress.png" alt="Mario Dress" />
+                          <!-- Product details -->
                           <div class="card-body p-4">
                               <div class="text-center">
-                                  <!-- Product name-->
-                                  <h5 class="fw-bolder">Mario Outfit</h5>
-                                  <!-- Product price-->
+                                  <!-- Product name -->
+                                  <h5 class="fw-bolder">Mario Dress</h5>
+                                  <!-- Product price -->
                                   $40.00 - $80.00
                               </div>
                               <div class="quantity-controls mt-2 text-center">
-                                  <button class="btn btn-sm btn-outline-secondary"
-                                      onclick="decreaseQuantity(this)">-</button>
-                                  <span class="quantity">0</span>
-                                  <button class="btn btn-sm btn-outline-secondary"
-                                      onclick="increaseQuantity(this)">+</button>
+                                  <button class="btn btn-sm btn-outline-secondary btn-decrease"
+                                      data-product-id="mario dress">-</button>
+                                  <span class="quantity" id="quantity-mario-dress"
+                                      data-product-id="mario dress">0</span>
+                                  <button class="btn btn-sm btn-outline-secondary btn-increase"
+                                      data-product-id="mario dress">+</button>
                               </div>
                           </div>
-
-
-                          <!-- Product actions-->
+                          <!-- Product actions -->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="mariooufit">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                             
+                            <div class="text-center">
+                                
+                                  <a class="btn btn-outline-dark mt-auto" href="#" data-product-id="mario dress" onclick="addToCart('mario dress')">Add to cart</a>
+                                 
                               </div>
                           </div>
                       </div>
                   </div>
+
+
                   <div class="col mb-5">
                       <div class="card h-100">
                           <!-- Sale badge-->
@@ -44,7 +47,7 @@
                           <div class="card-body p-4">
                               <div class="text-center">
                                   <!-- Product name-->
-                                  <h5 class="fw-bolder">Special Item</h5>
+                                  <h5 class="fw-bolder">GirlPinkSummer Dress</h5>
                                   <!-- Product reviews-->
                                   <div class="d-flex justify-content-center small text-warning mb-2">
                                       <div class="bi-star-fill"></div>
@@ -58,17 +61,18 @@
                                   $18.00
                               </div>
                               <div class="quantity-controls mt-2 text-center">
-                                  <button class="btn btn-sm btn-outline-secondary"
-                                      onclick="decreaseQuantity(this)">-</button>
-                                  <span class="quantity">0</span>
-                                  <button class="btn btn-sm btn-outline-secondary"
-                                      onclick="increaseQuantity(this)">+</button>
+                                  <button class="btn btn-sm btn-outline-secondary btn-decrease"
+                                      data-product-id="GirlPinkSummer Dress">-</button>
+                                  <span class="quantity" data-product-id="GirlPinkSummer Dress">0</span>
+                                  <button class="btn btn-sm btn-outline-secondary btn-increase"
+                                      data-product-id="GirlPinkSummer Dress">+</button>
                               </div>
                           </div>
                           <!-- Product actions-->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="GirlPinkSummerDress">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"
+                                      data-product-id="GirlPinkSummerDress">Add to cart</a>
+                                
                               </div>
                           </div>
                       </div>
@@ -79,42 +83,46 @@
                           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
                               Sale</div>
                           <!-- Product image-->
-                          <img class="card-img-top" src="/images/dashmidsection/Long-Sleeved Dusty Pink Dress.png" alt="..." />
+                          <img class="card-img-top" src="/images/dashmidsection/Long-Sleeved Dusty Pink Dress.png"
+                              alt="..." />
                           <!-- Product details-->
                           <div class="card-body p-4">
                               <div class="text-center">
                                   <!-- Product name-->
-                                  <h5 class="fw-bolder">Sale Item</h5>
+                                  <h5 class="fw-bolder">Long-Sleeved Dusty Pink Dress</h5>
                                   <!-- Product price-->
                                   <span class="text-muted text-decoration-line-through">$50.00</span>
                                   $25.00
                               </div>
                               <div class="quantity-controls mt-2 text-center">
-                                  <button class="btn btn-sm btn-outline-secondary"
-                                      onclick="decreaseQuantity(this)">-</button>
-                                  <span class="quantity">0</span>
-                                  <button class="btn btn-sm btn-outline-secondary"
-                                      onclick="increaseQuantity(this)">+</button>
+                                  <button class="btn btn-sm btn-outline-secondary btn-decrease"
+                                      data-product-id="Long-Sleeved Dusty Pink Dress">-</button>
+                                  <span class="quantity" data-product-id="Long-Sleeved Dusty Pink Dress">0</span>
+                                  <button class="btn btn-sm btn-outline-secondary btn-increase"
+                                      data-product-id="Long-Sleeved Dusty Pink Dress">+</button>
                               </div>
                           </div>
-                          <!-- Product actions-->
+                          <!-- Product actions -->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="dustypinkdress">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
-                              </div>
+                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"
+                                      data-product-id="Long-Sleeved Dusty Pink Dress">Add to cart</a>
+                                                                </div>
                           </div>
                       </div>
                   </div>
+
+
                   <div class="col mb-5">
                       <div class="card h-100">
                           <!-- Product image-->
                           <a href="/dashzoomluigi">
-                          <img class="card-img-top" src="/images/dashmidsection/LUIGI COSTUME .png" alt="LUIGIcostume" /></a>
+                              <img class="card-img-top" src="/images/dashmidsection/LUIGI COSTUME .png"
+                                  alt="LUIGIcostume" /></a>
                           <!-- Product details-->
                           <div class="card-body p-4">
                               <div class="text-center">
                                   <!-- Product name-->
-                                  <h5 class="fw-bolder">Popular Item</h5>
+                                  <h5 class="fw-bolder">LUIGI Costume</h5>
                                   <!-- Product reviews-->
                                   <div class="d-flex justify-content-center small text-warning mb-2">
                                       <div class="bi-star-fill"></div>
@@ -127,21 +135,25 @@
                                   $40.00
                               </div>
                               <div class="quantity-controls mt-2 text-center">
-                                  <button class="btn btn-sm btn-outline-secondary"
-                                      onclick="decreaseQuantity(this)">-</button>
-                                  <span class="quantity">0</span>
-                                  <button class="btn btn-sm btn-outline-secondary"
-                                      onclick="increaseQuantity(this)">+</button>
+                                  <button class="btn btn-sm btn-outline-secondary btn-decrease"
+                                      data-product-id="LUIGI Costume">-</button>
+                                  <span class="quantity" data-product-id="LUIGI Costume">0</span>
+                                  <button class="btn btn-sm btn-outline-secondary btn-increase"
+                                      data-product-id="LUIGI Costume">+</button>
                               </div>
                           </div>
                           <!-- Product actions-->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="LUIGIcostume">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"
+                                      data-product-id="LUIGIcostume">Add to cart</a>
+ 
                               </div>
                           </div>
                       </div>
                   </div>
+
+
+
                   <div class="col mb-5">
                       <div class="card h-100">
                           <!-- Sale badge-->
@@ -152,22 +164,25 @@
                           <!-- Product details-->
                           <div class="card-body p-4">
                               <div class="text-center">
-                                  <!-- Product name-->
-                                  <h5 class="fw-bolder">Sale Item</h5>
+                                  <!-- Product name-->  
+                                  <h5 class="fw-bolder">Pink Flowers Dress</h5>
                                   <!-- Product price-->
                                   <span class="text-muted text-decoration-line-through">$50.00</span>
                                   $25.00
                               </div>
                               <div class="quantity-controls mt-2 text-center">
-        <button class="btn btn-sm btn-outline-secondary" onclick="decreaseQuantity(this)">-</button>
-        <span class="quantity">0</span>
-        <button class="btn btn-sm btn-outline-secondary" onclick="increaseQuantity(this)">+</button>
-    </div>
+                                  <button class="btn btn-sm btn-outline-secondary btn-decrease"
+                                      data-product-id="Pink Flowers Dress">-</button>
+                                  <span class="quantity" data-product-id="Pink Flowers Dress">0</span>
+                                  <button class="btn btn-sm btn-outline-secondary btn-increase"
+                                      data-product-id="Pink Flowers Dress">+</button>
+                              </div>
                           </div>
                           <!-- Product actions-->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="pinkflowerdress">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"
+                                      data-product-id="Pink Flowers Dress">Add to cart</a>
+                                 
                               </div>
                           </div>
                       </div>
@@ -175,27 +190,29 @@
                   <div class="col mb-5">
                       <div class="card h-100">
                           <!-- Product image-->
-                          <img class="card-img-top" src="images/dashmidsection/StarDetailling Long-sleeved Dress.png" alt="..." />
+                          <img class="card-img-top" src="images/dashmidsection/StarDetailling Long-sleeved Dress.png"
+                              alt="..." />
                           <!-- Product details-->
                           <div class="card-body p-4">
                               <div class="text-center">
                                   <!-- Product name-->
-                                  <h5 class="fw-bolder">Fancy Product</h5>
+                                  <h5 class="fw-bolder">StarDetailling Dress</h5>
                                   <!-- Product price-->
                                   $120.00 - $280.00
                               </div>
                               <div class="quantity-controls mt-2 text-center">
-                                  <button class="btn btn-sm btn-outline-secondary"
-                                      onclick="decreaseQuantity(this)">-</button>
-                                  <span class="quantity">0</span>
-                                  <button class="btn btn-sm btn-outline-secondary"
-                                      onclick="increaseQuantity(this)">+</button>
+                                  <button class="btn btn-sm btn-outline-secondary btn-decrease"
+                                      data-product-id="StarDetailling Long-sleeved Dress">-</button>
+                                  <span class="quantity" data-product-id="StarDetailling Long-sleeved Dress">0</span>
+                                  <button class="btn btn-sm btn-outline-secondary btn-increase"
+                                      data-product-id="StarDetailling Long-sleeved Dress">+</button>
                               </div>
                           </div>
                           <!-- Product actions-->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="StarDetailling">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"
+                                      data-product-id="StarDetailling Long-sleeved Dress">Add to cart</a>
+                                
                               </div>
                           </div>
                       </div>
@@ -211,7 +228,7 @@
                           <div class="card-body p-4">
                               <div class="text-center">
                                   <!-- Product name-->
-                                  <h5 class="fw-bolder">Special Item</h5>
+                                  <h5 class="fw-bolder">YellowCotton Dress</h5>
                                   <!-- Product reviews-->
                                   <div class="d-flex justify-content-center small text-warning mb-2">
                                       <div class="bi-star-fill"></div>
@@ -225,17 +242,18 @@
                                   $18.00
                               </div>
                               <div class="quantity-controls mt-2 text-center">
-                                  <button class="btn btn-sm btn-outline-secondary"
-                                      onclick="decreaseQuantity(this)">-</button>
-                                  <span class="quantity">0</span>
-                                  <button class="btn btn-sm btn-outline-secondary"
-                                      onclick="increaseQuantity(this)">+</button>
+                                  <button class="btn btn-sm btn-outline-secondary btn-decrease"
+                                      data-product-id="YellowCottonDress">-</button>
+                                  <span class="quantity" data-product-id="YellowCottonDress">0</span>
+                                  <button class="btn btn-sm btn-outline-secondary btn-increase"
+                                      data-product-id="YellowCottonDress">+</button>
                               </div>
                           </div>
                           <!-- Product actions-->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="YellowCottonDress">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"
+                                      data-product-id="YellowCottonDress">Add to cart</a>
+                                 
                               </div>
                           </div>
                       </div>
@@ -243,12 +261,13 @@
                   <div class="col mb-5">
                       <div class="card h-100">
                           <!-- Product image-->
-                          <img class="card-img-top" src="/images/dashmidsection/PoloRalphLauren.png" alt="PoloRalphLauren" />
+                          <img class="card-img-top" src="/images/dashmidsection/PoloRalphLauren.png"
+                              alt="PoloRalphLauren" />
                           <!-- Product details-->
                           <div class="card-body p-4">
                               <div class="text-center">
                                   <!-- Product name-->
-                                  <h5 class="fw-bolder">Popular Item</h5>
+                                  <h5 class="fw-bolder">PoloRalphLauren</h5>
                                   <!-- Product reviews-->
                                   <div class="d-flex justify-content-center small text-warning mb-2">
                                       <div class="bi-star-fill"></div>
@@ -261,17 +280,17 @@
                                   $40.00
                               </div>
                               <div class="quantity-controls mt-2 text-center">
-                                  <button class="btn btn-sm btn-outline-secondary"
-                                      onclick="decreaseQuantity(this)">-</button>
-                                  <span class="quantity">0</span>
-                                  <button class="btn btn-sm btn-outline-secondary"
-                                      onclick="increaseQuantity(this)">+</button>
+                                  <button class="btn btn-sm btn-outline-secondary btn-decrease"
+                                      data-product-id="PoloRalphLauren">-</button>
+                                  <span class="quantity" data-product-id="PoloRalphLauren">0</span>
+                                  <button class="btn btn-sm btn-outline-secondary btn-increase"
+                                      data-product-id="PoloRalphLauren">+</button>
                               </div>
                           </div>
                           <!-- Product actions-->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="PoloRalphLauren">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                              <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"
+                                      data-product-id="PoloRalphLauren">Add to cart</a>
                               </div>
                           </div>
                       </div>
@@ -280,76 +299,43 @@
           </div>
       </section>
 
-
-<!-- Total quantity display -->
-<div class="text-center mt-3">
-    <p>Total Quantity: <span id="totalQuantity">0</span></p>
-</div>
-
+ 
+  
 <script>
-    // JavaScript function to update cart count for each product
-    let productCounts = {}; // Object to store the count for each product
+// Function to increase the quantity
+function increaseQuantity(button) {
+    const quantityElement = button.parentElement.querySelector('.quantity');
+    const currentQuantity = parseInt(quantityElement.textContent, 10);
+    quantityElement.textContent = currentQuantity + 1;
+}
 
-    // Function to increase the quantity of a product
-    function increaseQuantity(productId) {
-        if (productCounts[productId] === undefined) {
-            productCounts[productId] = 1; // Initialize to 1 if not set
-        } else {
-            productCounts[productId]++; // Increment the count
-        }
+// Function to decrease the quantity
+function decreaseQuantity(button) {
+    const quantityElement = button.parentElement.querySelector('.quantity');
+    const currentQuantity = parseInt(quantityElement.textContent, 10);
 
-        // Update the quantity display for the product
-        document.querySelector(`#${productId}`).textContent = productCounts[productId];
-
-        // Update the total quantity display
-        updateTotalQuantity();
+    if (currentQuantity > 0) {
+        quantityElement.textContent = currentQuantity - 1;
     }
+}
 
-    // Function to decrease the quantity of a product
-    function decreaseQuantity(productId) {
-        if (productCounts[productId] === undefined) {
-            return; // No need to decrease if count is not set
-        }
+// Add event listeners to the increase buttons
+const increaseButtons = document.querySelectorAll('.btn-increase');
+increaseButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        increaseQuantity(button);
+    });
+});
 
-        if (productCounts[productId] > 0) {
-            productCounts[productId]--; // Decrement the count
-        }
-
-        // Update the quantity display for the product
-        document.querySelector(`#${productId}`).textContent = productCounts[productId];
-
-        // Update the total quantity display
-        updateTotalQuantity();
-    }
-
-    // Function to update the total quantity display
-    function updateTotalQuantity() {
-        const totalQuantityElement = document.querySelector('#totalQuantity');
-        let totalQuantity = 0;
-
-        // Calculate the total quantity by summing up all product quantities
-        for (const productId in productCounts) {
-            totalQuantity += productCounts[productId];
-        }
-
-        // Update the total quantity display
-        totalQuantityElement.textContent = totalQuantity;
-    }
-
-    // Function to update the cart with the new quantities
-    function updateCart() {
-        // Send the updated quantities to the server (you'll need to implement this)
-        // After successfully updating the server, you can reset the productCounts object
-        // to reflect the updated cart state and update the total quantity display.
-        // Example:
-        // axios.post('/updateCart', { productCounts })
-        //     .then(response => {
-        //         productCounts = response.data.updatedProductCounts;
-        //         updateTotalQuantity();
-        //     })
-        //     .catch(error => {
-        //         console.error('Error updating cart:', error);
-        //     });
-    }
+// Add event listeners to the decrease buttons
+const decreaseButtons = document.querySelectorAll('.btn-decrease');
+decreaseButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+        decreaseQuantity(button);
+    });
+});
 </script>
+
+
+
 

@@ -66,54 +66,6 @@
 </footer>
 
 
-<script>
-    // Function to increase quantity
-    function increaseQuantity(button) {
-        const quantityElement = button.parentElement.querySelector('.quantity');
-        const currentQuantity = parseInt(quantityElement.textContent);
-        const newQuantity = currentQuantity + 1;
-        quantityElement.textContent = newQuantity;
-        updateCartCount(newQuantity); // Update cart count
-    }
-
-    // Function to decrease quantity
-    function decreaseQuantity(button) {
-        const quantityElement = button.parentElement.querySelector('.quantity');
-        const currentQuantity = parseInt(quantityElement.textContent);
-        if (currentQuantity > 0) {
-            const newQuantity = currentQuantity - 1;
-            quantityElement.textContent = newQuantity;
-            updateCartCount(newQuantity); // Update cart count
-        }
-    }
-
-    // Function to update cart count in navbar
-    function updateCartCount(quantity) {
-        const cartCountElement = document.querySelector('.cart-count');
-        cartCountElement.textContent = quantity;
-    }
-</script>
-
-
-<script>
-
-// Attach event listeners to all "Add to Cart" buttons
-document.querySelectorAll('[data-product-id]').forEach(button => {
-    button.addEventListener('click', function() {
-        addToCart(this.getAttribute('data-product-id'));
-    });
-
-});
-
-function addToCart(productId) {
-    // ... existing logic ...
-    const cartCountElement = document.querySelector('.badge.rounded-pill');
-    let currentCount = parseInt(cartCountElement.textContent) || 0;
-    cartCountElement.textContent = currentCount + 1;
-}
-
-</script>
-
 
 
      <script>
@@ -141,5 +93,7 @@ function addToCart(productId) {
         // Update the greeting every minute (you can adjust the timing as needed)
         setInterval(updateGreeting, 60000); // Update every minute
     </script>
+
+   
 </body>
 </html>

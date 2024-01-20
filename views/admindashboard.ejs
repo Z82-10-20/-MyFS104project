@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">BabyShark Admin Dashboard</h1>
+        
+        <!-- Admin List -->
+<div class="mb-5">
+    <h2 class="mb-3">Admin</h2>
+    <% if (admins && admins.length > 0) { %>
+        <ul class="list-group">
+            <% for (const admin of admins) { %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <%= admin.username %>
+                    <span class="badge badge-primary badge-pill"><%= admin.email %></span>
+                    <!-- Remove Button -->
+                    <form action="/removeadmin/<%= admin.email %>" method="post">
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to remove this admin member?');">
+                            <i class="fa fa-trash"></i> Remove
+                        </button>
+                    </form>
+                </li>
+            <% } %>
+        </ul>
+    <% } else { %>
+        <p class="text-muted">No admins found.</p>
+    <% } %>
+</div>
+
+
+        <!-- Create New Admin Member Form -->
+<div class="mb-5">
+    <h2 class="mb-3">Create New Admin Member</h2>
+    <form action="/createadmin" method="post">
+        <!-- Add input fields for admin's username, email, and password -->
+        <div class="form-group">
+            <label for="adminUsername">Username:</label>
+            <input type="text" class="form-control" id="adminUsername" name="adminUsername" required>
+        </div>
+        <div class="form-group">
+            <label for="adminEmail">Email:</label>
+            <input type="email" class="form-control" id="adminEmail" name="adminEmail" required>
+        </div>
+        <div class="form-group">
+            <label for="adminPassword">Password:</label>
+            <input type="password" class="form-control" id="adminPassword" name="adminPassword" required>
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Create Admin Member</button>
+        <a href="/" class="btn btn-danger">Logout</a>
+    </form>
+</div>
+
+
+        <!-- User List -->
+        <div class="mb-5">
+            <h2 class="mb-3">Customer's Details</h2>
+            <% if (users && users.length > 0) { %>
+                <ul class="list-group">
+    <% users.forEach(user => { %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <strong>Name:</strong> <%= user.name %><br>
+                <strong>Email:</strong> <%= user.email %>
+            </div>
+            <!-- Delete Button -->
+            <form action="/deleteuser/<%= user.email %>" method="post" class="ml-auto">
+    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this user?');">
+        <i class="fa fa-trash"></i> Remove
+    </button>
+</form>
+
+        </li>
+    <% }); %>
+</ul>
+            <% } else { %>
+                <p class="text-muted">No users found.</p>
+            <% } %>
+        </div>
+
+        <!-- Create New User Form -->
+        <div class="mb-5">
+            <h2 class="mb-3">Create New User for Customer</h2>
+            <form action="/createuser" method="post">
+                <div class="form-group">
+                    <label for="username">Name:</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary me-2">Create User</button>
+                <a href="/" class="btn btn-danger">Logout</a>
+            </form>
+        </div>
+
+        
+    </div>
+
+    <!-- Bootstrap JS and Popper.js CDN links -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

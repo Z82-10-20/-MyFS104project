@@ -1,17 +1,15 @@
-    <title>Dashboard</title>
-       <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/dashboard-navbar.css">
-      <!-- Add animate.css link (CDN) to your HTML head section -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-
-
-
+<title>Dashboard</title>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dashboard-navbar.css">
+<!-- Add animate.css link (CDN) to your HTML head section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/5.3.2/animate.min.css">
+<link rel="stylesheet" href="css/css/bootstrap.min.css">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
     <div class="container">
-      <a class="navbar-brand" href="/dashboard">
-    <i class="fas fa-baby animated bounce"></i> Babyshark
-</a>
+        <a class="navbar-brand" href="/dashboard">
+            <i class="fas fa-baby animated bounce"></i> Babyshark
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,16 +29,16 @@
                     <a class="nav-link" href="/">Logout</a>
                 </li>
             </ul>
-  <a href="/cart" class="cart-link">
-    <i class="bi-cart-fill me-1"></i>
-    Cart
-    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-</a>
-
+            <a href="/cart" class="cart-link">
+                <i class="bi-cart-fill me-2"></i>
+                Cart
+                <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+            </a>
         </div>
     </div>
 </nav>
-<script>
+    <script src="js/js/bootstrap.bundle.min.js"></script>
+    <!-- <script>
   function addToCart(productId) {
     // ... existing logic ...
     const cartCountElement = document.querySelector('.badge.rounded-pill');
@@ -48,6 +46,7 @@
     cartCountElement.textContent = currentCount + 1;
 }
 
-</script>
+</script> -->
 
 
+    <!-- <script src="products.js"></script> -->

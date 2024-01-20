@@ -29,7 +29,7 @@
                           <!-- Product actions-->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="mariooufit">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                               
                               </div>
                           </div>
                       </div>
@@ -71,7 +71,7 @@
                           <!-- Product actions-->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="GirlPinkSummerDress">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                               
                               </div>
                           </div>
                       </div>
@@ -104,7 +104,7 @@
                           <!-- Product actions-->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="dustypinkdress">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                                
                               </div>
                           </div>
                       </div>
@@ -141,7 +141,7 @@
                           <!-- Product actions-->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="LUIGIcostume">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                               
                               </div>
                           </div>
                       </div>
@@ -172,7 +172,7 @@
                           <!-- Product actions-->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="pinkflowerdress">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                                
                               </div>
                           </div>
                       </div>
@@ -202,7 +202,7 @@
                           <!-- Product actions-->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="StarDetailling">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                               
                               </div>
                           </div>
                       </div>
@@ -243,7 +243,7 @@
                           <!-- Product actions-->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="YellowCottonDress">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                              
                               </div>
                           </div>
                       </div>
@@ -281,7 +281,7 @@
                           <!-- Product actions-->
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                               <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#"data-product-id="PoloRalphLauren">Add to cart</a>
-                                <button class="btn btn-outline-primary mt-2" onclick="updateCart()">Update</button>
+                               
                               </div>
                           </div>
                       </div>
@@ -291,75 +291,8 @@
       </section>
 
 
-<!-- Total quantity display -->
-<div class="text-center mt-3">
-    <p>Total Quantity: <span id="totalQuantity">0</span></p>
-</div>
 
-<script>
-    // JavaScript function to update cart count for each product
-    let productCounts = {}; // Object to store the count for each product
 
-    // Function to increase the quantity of a product
-    function increaseQuantity(productId) {
-        if (productCounts[productId] === undefined) {
-            productCounts[productId] = 1; // Initialize to 1 if not set
-        } else {
-            productCounts[productId]++; // Increment the count
-        }
 
-        // Update the quantity display for the product
-        document.querySelector(`#${productId}`).textContent = productCounts[productId];
 
-        // Update the total quantity display
-        updateTotalQuantity();
-    }
-
-    // Function to decrease the quantity of a product
-    function decreaseQuantity(productId) {
-        if (productCounts[productId] === undefined) {
-            return; // No need to decrease if count is not set
-        }
-
-        if (productCounts[productId] > 0) {
-            productCounts[productId]--; // Decrement the count
-        }
-
-        // Update the quantity display for the product
-        document.querySelector(`#${productId}`).textContent = productCounts[productId];
-
-        // Update the total quantity display
-        updateTotalQuantity();
-    }
-
-    // Function to update the total quantity display
-    function updateTotalQuantity() {
-        const totalQuantityElement = document.querySelector('#totalQuantity');
-        let totalQuantity = 0;
-
-        // Calculate the total quantity by summing up all product quantities
-        for (const productId in productCounts) {
-            totalQuantity += productCounts[productId];
-        }
-
-        // Update the total quantity display
-        totalQuantityElement.textContent = totalQuantity;
-    }
-
-    // Function to update the cart with the new quantities
-    function updateCart() {
-        // Send the updated quantities to the server (you'll need to implement this)
-        // After successfully updating the server, you can reset the productCounts object
-        // to reflect the updated cart state and update the total quantity display.
-        // Example:
-        // axios.post('/updateCart', { productCounts })
-        //     .then(response => {
-        //         productCounts = response.data.updatedProductCounts;
-        //         updateTotalQuantity();
-        //     })
-        //     .catch(error => {
-        //         console.error('Error updating cart:', error);
-        //     });
-    }
-</script>
 

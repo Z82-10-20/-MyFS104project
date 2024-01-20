@@ -22,34 +22,15 @@ const loginSchema = new mongoose.Schema({
         type: String,
         required: true
     },
- profilePicture: {
-  fileId: String, // Unique identifier for the image
-  filename: String,
-  contentType: String,
-  data: Buffer,
-}
+      profileImage: {
+        type: String,
+        required: false // This field is not required
+    }
+
+
 
 });
 
 const collection = mongoose.model("users", loginSchema);
 
 export default collection;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
